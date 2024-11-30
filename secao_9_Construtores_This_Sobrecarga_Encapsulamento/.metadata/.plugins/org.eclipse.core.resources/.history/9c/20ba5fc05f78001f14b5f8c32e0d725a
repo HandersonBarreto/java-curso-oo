@@ -1,0 +1,5 @@
+package sem_dip;
+
+public class MySQLConnection {
+
+}

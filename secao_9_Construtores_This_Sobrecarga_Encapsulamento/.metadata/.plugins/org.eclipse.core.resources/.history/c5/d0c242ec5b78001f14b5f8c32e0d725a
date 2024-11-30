@@ -1,0 +1,33 @@
+package com_ocp;
+
+interface Remuneravel {
+	double remuneracao();
+}
+
+class ContratoClt implements Remuneravel {
+	@Override
+	public double remuneracao() {
+		// Implementação da remuneração
+		return 0.0;
+	}
+}
+
+class Estagio implements Remuneravel {
+	@Override
+	public double remuneracao() {
+		// Implementação da remuneração
+		return 0.0;
+	}
+}
+
+class FolhaDePagamento {
+	protected double saldo;
+
+	public void calcular(Remuneravel funcionario) {
+		this.saldo = funcionario.remuneracao();
+	}
+
+	public double getSaldo() {
+		return saldo;
+	}
+}

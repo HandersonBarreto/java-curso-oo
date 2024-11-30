@@ -1,0 +1,9 @@
+package banco;
+
+public class Banco {
+
+	private int numeroConta;
+	private String titular;
+	private double depositoInicial;
+
+}

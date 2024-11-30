@@ -1,0 +1,44 @@
+package sem_lsp;
+
+import java.util.List;
+
+public class BookDelivery {
+    private List<String> titles;
+    private int userId;
+
+    public void getDeliveryLocations() {
+        // Implementação para obter locais de entrega para livros
+        System.out.println("Obtendo locais de entrega para livros.");
+    }
+}
+
+class PosterMapDelivery extends BookDelivery {
+    @Override
+    public void getDeliveryLocations() {
+        // Implementação para obter locais de entrega para mapas
+        System.out.println("Obtendo locais de entrega para mapas.");
+    }
+}
+
+class AudioBookDelivery extends BookDelivery {
+    @Override
+    public void getDeliveryLocations() {
+        // Esta implementação não é válida, pois audiolivros não têm locais físicos
+        throw new UnsupportedOperationException("Audiolivro não possui uma localização física.");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BookDelivery bookDelivery = new BookDelivery();
+        PosterMapDelivery posterDelivery = new PosterMapDelivery();
+        AudioBookDelivery audioBookDelivery = new AudioBookDelivery();
+
+        bookDelivery.getDeliveryLocations(); // Obtendo locais de entrega para livros.
+        posterDelivery.getDeliveryLocations(); // Obtendo locais de entrega para mapas.
+        
+        // Isso causará uma exceção em tempo de execução
+        audioBookDelivery.getDeliveryLocations(); 
+    }
+}
+

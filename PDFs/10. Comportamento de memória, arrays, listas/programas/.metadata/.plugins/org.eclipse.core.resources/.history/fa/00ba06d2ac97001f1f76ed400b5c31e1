@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Quantas pessoas você vai digitar? ");
+		int tamanhoVetor = sc.nextInt();
+
+		String[] vetorNome = new String[tamanhoVetor];
+		int[] vetorIdade = new int[tamanhoVetor];
+
+		for (int i = 0; i < tamanhoVetor; i++) {
+			System.out.println("Dados da " + (i+1) + "a" + " pessoa");
+			sc.nextLine();
+			System.out.print("Nome: ");
+			vetorNome[i] = sc.nextLine();
+			System.out.print("Idade: ");
+			vetorIdade[i] = sc.nextInt();
+		}
+
+		sc.close();
+
+	}
+
+}

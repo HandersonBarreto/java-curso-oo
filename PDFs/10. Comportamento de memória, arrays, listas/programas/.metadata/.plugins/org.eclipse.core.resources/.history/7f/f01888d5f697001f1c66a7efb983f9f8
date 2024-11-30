@@ -1,0 +1,48 @@
+package programa;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Pessoa;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("Quantas pessoas serao digitadas: ");
+		int quantidade = sc.nextInt();
+
+		Pessoa[] vetor = new Pessoa[quantidade];
+
+		for (int i = 0; i < vetor.length; i++) {
+			System.out.printf("Altura da %da pessoa: ", (i + 1));
+			double altura = sc.nextDouble();
+			System.out.printf("Genero da %da pessoa: ", (i + 1));
+			char genero = sc.next().charAt(0);
+
+			vetor[i] = new Pessoa(altura, genero);
+		}
+
+		double menorAltura = vetor[0].getAltura(), maiorAltura = 0.0;
+
+		for (int i = 0; i < vetor.length; i++) {
+			if (menorAltura > vetor[i].getAltura()) {
+				menorAltura = vetor[i].getAltura();
+			}
+		}
+		for (int i = 0; i < vetor.length; i++) {
+			if (maiorAltura < vetor[i].getAltura()) {
+				maiorAltura = vetor[i].getAltura();
+			}
+
+		}
+		System.out.printf("Menor altura: %.2f", menorAltura);
+		System.out.printf("Menor altura: %.2f", maiorAltura);
+
+		sc.close();
+
+	}
+
+}

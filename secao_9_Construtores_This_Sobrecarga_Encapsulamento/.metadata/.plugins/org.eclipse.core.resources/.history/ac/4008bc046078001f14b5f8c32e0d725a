@@ -1,0 +1,113 @@
+package com_isp;
+
+interface Dispositivo {
+	void ligar();
+
+	void desligar();
+
+	void mostrarEstado();
+
+	void carregarBateria();
+}
+
+class Computador implements Dispositivo {
+	private boolean ligado;
+
+	@Override
+	public void ligar() {
+		ligado = true;
+		System.out.println("Computador ligado.");
+	}
+
+	@Override
+	public void desligar() {
+		ligado = false;
+		System.out.println("Computador desligado.");
+	}
+
+	@Override
+	public void mostrarEstado() {
+		System.out.println("Computador está " + (ligado ? "ligado" : "desligado") + ".");
+	}
+
+	@Override
+	public void carregarBateria() {
+		// Computador não precisa carregar bateria, mas tem que implementar
+		System.out.println("Computador não tem bateria para carregar.");
+	}
+}
+
+class Smartphone implements Dispositivo {
+	private boolean ligado;
+
+	@Override
+	public void ligar() {
+		ligado = true;
+		System.out.println("Smartphone ligado.");
+	}
+
+	@Override
+	public void desligar() {
+		ligado = false;
+		System.out.println("Smartphone desligado.");
+	}
+
+	@Override
+	public void mostrarEstado() {
+		System.out.println("Smartphone está " + (ligado ? "ligado" : "desligado") + ".");
+	}
+
+	@Override
+	public void carregarBateria() {
+		System.out.println("Carregando a bateria do smartphone.");
+	}
+}
+
+class Televisor implements Dispositivo {
+	private boolean ligado;
+
+	@Override
+	public void ligar() {
+		ligado = true;
+		System.out.println("Televisor ligado.");
+	}
+
+	@Override
+	public void desligar() {
+		ligado = false;
+		System.out.println("Televisor desligado.");
+	}
+
+	@Override
+	public void mostrarEstado() {
+		System.out.println("Televisor está " + (ligado ? "ligado" : "desligado") + ".");
+	}
+
+	@Override
+	public void carregarBateria() {
+		// Televisor não precisa carregar bateria, mas tem que implementar
+		System.out.println("Televisor não tem bateria para carregar.");
+	}
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Dispositivo computador = new Computador();
+		computador.ligar();
+		computador.mostrarEstado();
+		computador.carregarBateria(); // Computador não tem bateria
+		computador.desligar();
+
+		Dispositivo smartphone = new Smartphone();
+		smartphone.ligar();
+		smartphone.mostrarEstado();
+		smartphone.carregarBateria();
+		smartphone.desligar();
+
+		Dispositivo televisor = new Televisor();
+		televisor.ligar();
+		televisor.mostrarEstado();
+		televisor.carregarBateria(); // Televisor não tem bateria
+		televisor.desligar();
+	}
+}

@@ -1,0 +1,33 @@
+package programa;
+
+import java.util.Locale;
+import java.util.Scanner;
+
+import entidade.Banco;
+
+public class Principal {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		Locale.setDefault(Locale.US);
+		Banco banco = new Banco(0, null);
+
+		System.out.print("Digite o numero da conta: ");
+		int numeroConta = sc.nextInt();
+
+		System.out.print("\nDigite o nome do titular: ");
+		String titular = sc.next();
+
+		System.out.print("\nDeseja realizar um deposito inicial? (s/n) ");
+		String depositar = sc.next();
+
+		if (depositar == "s") {
+			System.out.print("\nInforme o valor inicial de deposito: ");
+			double depositoInicial = sc.nextDouble();
+		}
+
+		sc.close();
+
+	}
+
+}
